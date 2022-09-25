@@ -3,12 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { ShoppingCartContextProvider } from "./context/ShopingCartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ShoppingCartContextProvider>
+        <Toaster position="bottom-right" />
+        <App />
+      </ShoppingCartContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
